@@ -17,6 +17,9 @@ public class FishingRodController : MonoBehaviour
     public string activeBait;
     public GameObject fishInBait;
     public Vector2 sizeBait;
+    public Sprite[] AllBait;
+    public GameObject BaitUsedBig;
+    public GameObject BaitUsedSmall;
 
     public Vector2 startTouchPosition;
     public Vector2 endTouchPosition;
@@ -85,7 +88,7 @@ public class FishingRodController : MonoBehaviour
 
         if (lempar.transform.position == startLempar)
         {
-            lemparBody.AddForce(-(startClick - endClick) * power/15);
+            lemparBody.AddForce(-(startClick - endClick) * power/10);
         }
         else if(startClick.y > endClick.y)
         {
@@ -132,6 +135,17 @@ public class FishingRodController : MonoBehaviour
     public void BaitChoose(string baitName)
     {   if(lempar.transform.position == startLempar)
         lempar.tag = baitName;
+        if(baitName == "smolFish")
+        {
+            BaitUsedBig.GetComponent<SpriteRenderer>().sprite = AllBait[0];
+            BaitUsedSmall.GetComponent<SpriteRenderer>().sprite = AllBait[0];
+        }
+
+        if(baitName == "bigFish")
+        {
+            BaitUsedBig.GetComponent<SpriteRenderer>().sprite = AllBait[1];
+            BaitUsedSmall.GetComponent<SpriteRenderer>().sprite = AllBait[1];
+        }
     }
 
     public void PullBack()

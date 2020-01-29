@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6462488141803058782}
   - component: {fileID: 6462488141803058780}
   - component: {fileID: 6462488141803058752}
+  - component: {fileID: -7265868001908207302}
   m_Layer: 0
   m_Name: SmolFish
   m_TagString: smolFish
@@ -103,9 +104,28 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 1
+--- !u!114 &-7265868001908207302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462488141803058753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2b18d014162e94dac90d5d407bff09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  timeToGo: 0
+  timeTolerance: 0
+  frc: {fileID: 0}
+  scoreGain: 100
+  isOnBait: 0
+  srSelf: {fileID: 0}

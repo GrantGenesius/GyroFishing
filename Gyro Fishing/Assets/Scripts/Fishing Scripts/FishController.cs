@@ -67,7 +67,7 @@ public class FishController : MonoBehaviour
     {
         if(collision.tag == gameObject.tag)
         {
-            srSelf.color = Color.black;
+            srSelf.color = Color.blue;
             isOnBait = false;
             frc.fishInBait = null;
         }
@@ -83,7 +83,7 @@ public class FishController : MonoBehaviour
     {
         if (timer < timeToGo - timeTolerance)
         {
-            //srSelf.color = Color.green;
+            
 
 
         }
