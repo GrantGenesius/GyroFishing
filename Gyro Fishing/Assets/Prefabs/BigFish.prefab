@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1935095294375044667}
   - component: {fileID: 1935095294375044647}
   - component: {fileID: 4453389510806726495}
+  - component: {fileID: 7881531237726082977}
   m_Layer: 0
   m_Name: BigFish
   m_TagString: bigFish
@@ -28,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935095294375044646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.54, y: 0.45, z: 0}
-  m_LocalScale: {x: 2.1764014, y: 1.3291, z: 1.3291}
+  m_LocalPosition: {x: -3.561, y: -0.148, z: 0}
+  m_LocalScale: {x: 0.57979333, y: 0.7323341, z: 1.3291}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,8 +72,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 28113c88510b4ba4cacecd2a317560de, type: 3}
-  m_Color: {r: 0, g: 0.24979341, b: 0.4339623, a: 1}
+  m_Sprite: {fileID: -5899429995093467617, guid: c4a1ee1da744b8347809740f3f54ee55,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,8 +109,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0018945086, y: 0.0005703502}
-  m_Size: {x: 1.0222201, y: 1.0360398}
+  m_Offset: {x: -0.027060688, y: 0.08027867}
+  m_Size: {x: 5.688179, y: 1.8331307}
   m_Direction: 1
 --- !u!114 &4453389510806726495
 MonoBehaviour:
@@ -129,3 +131,22 @@ MonoBehaviour:
   scoreGain: 200
   isOnBait: 0
   srSelf: {fileID: 0}
+--- !u!95 &7881531237726082977
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935095294375044646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83511282f2d7fd5468040c3cfa2232a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

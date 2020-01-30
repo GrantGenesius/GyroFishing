@@ -20,6 +20,7 @@ public class FishingRodController : MonoBehaviour
     public Sprite[] AllBait;
     public GameObject BaitUsedBig;
     public GameObject BaitUsedSmall;
+    public BaitThrow bt;
 
     public Vector2 startTouchPosition;
     public Vector2 endTouchPosition;
@@ -34,14 +35,16 @@ public class FishingRodController : MonoBehaviour
     {
         startLempar = lempar.transform.position;
         sizeBait = lempar.transform.localScale;
+        bt = FindObjectOfType<BaitThrow>();
+        lemparBody = lempar.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {   Check();
         SwipeDown();
-
-        lemparBody = lempar.GetComponent<Rigidbody2D>();
+       
+       
        
     
         
@@ -51,49 +54,49 @@ public class FishingRodController : MonoBehaviour
     public void OnMouseDown()
     {
          
-        if (lempar.transform.position == startLempar)
-        {
+        //if (lempar.transform.position == startLempar)
+        //{
             
-            powerBar.gameObject.SetActive(true);
-            powerBar.value = 0;
-            lemparBody.velocity = new Vector3(0, 0, 0);
-            startClick = Input.mousePosition;
-        }
+        //    powerBar.gameObject.SetActive(true);
+        //    powerBar.value = 0;
+        //    lemparBody.velocity = new Vector3(0, 0, 0);
+        //    startClick = Input.mousePosition;
+        //}
        
     }
 
     private void OnMouseDrag()
     {
         
-        if (lempar.transform.position == startLempar)
-        {
-           PowerFishRod();
-        } 
+        //if (lempar.transform.position == startLempar)
+        //{
+        //   PowerFishRod();
+        //} 
     }
 
     private void OnMouseUp()
     {
 
        
-            power = powerBar.value;
-            endClick = Input.mousePosition;
+        //    power = powerBar.value;
+        //    endClick = Input.mousePosition;
 
-            float angle = Vector2.Angle(startClick, endClick);
+        //    float angle = Vector2.Angle(startClick, endClick);
 
-        if(startClick == endClick)
-        {
-            PullBack();
+        //if(startClick == endClick)
+        //{
+        //    PullBack();
 
-        }
+        //}
 
-        if (lempar.transform.position == startLempar)
-        {
-            lemparBody.AddForce(-(startClick - endClick) * power/10);
-        }
-        else if(startClick.y > endClick.y)
-        {
-            lemparBody.AddForce(-(startClick - endClick));
-        }
+        //if (lempar.transform.position == startLempar)
+        //{
+        //    lemparBody.AddForce(-(startClick - endClick) * power/10);
+        //}
+        //else if(startClick.y > endClick.y)
+        //{
+        //    lemparBody.AddForce(-(startClick - endClick));
+        //}
         
         
 
@@ -130,6 +133,8 @@ public class FishingRodController : MonoBehaviour
         {
             holdingUp = false;
         }
+
+      
     }
 
     public void BaitChoose(string baitName)
@@ -153,6 +158,8 @@ public class FishingRodController : MonoBehaviour
         powerBar.gameObject.SetActive(false);
         lemparBody.velocity = new Vector2(0, 0);
         powerBar.value = 0;
+        bt.isReleased = false;
+        lempar.GetComponent<SpringJoint2D>().enabled = true;
         lempar.transform.position = startLempar;
         lempar.transform.localScale = sizeBait;
         if (isReadyToPull && fishInBait != null)
