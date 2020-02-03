@@ -43,8 +43,7 @@ public class BaitThrow : MonoBehaviour
                 
             }
 
-            lineRender.SetPosition(0, transform.position);
-            lineRender.SetPosition(1, -transform.position);
+           
                
         }
         
@@ -87,10 +86,9 @@ public class BaitThrow : MonoBehaviour
 
             
             isReleased = false;
-            if(GetComponent<SpringJoint2D>().enabled == false && rb.velocity.x < 0.4f ||rb.velocity.y < 0.4f)
-            {
+          
                 GetComponent<SpringJoint2D>().enabled = true;
-            }
+            
         }
     }
 
@@ -100,7 +98,7 @@ public class BaitThrow : MonoBehaviour
         {
 
 
-            GetComponent<SpringJoint2D>().enabled = false;
+            //GetComponent<SpringJoint2D>().enabled = false;
             isReleased = true;
 
         }
